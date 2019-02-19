@@ -73,15 +73,15 @@ public class UserForm implements Serializable {
     @Domain("income")
     private String income;
 
-    /** 職業 */
-    @Required
+   /** 職業 */
+/*    @Required
     @Domain("job")
     private String job;
-
+*/
     /** その他の職業 */
-    @Domain("otherJob")
+  /*  @Domain("otherJob")
     private String otherJob;
-
+*/
     /** 治療歴有無 */
     @Required
     @Domain("treated")
@@ -178,7 +178,7 @@ public class UserForm implements Serializable {
     public void setMarried(String married) {
         this.married = married;
     }
-
+/*
     public String getJob() {
         return job;
     }
@@ -186,7 +186,7 @@ public class UserForm implements Serializable {
     public void setJob(String job) {
         this.job = job;
     }
-
+*/
     public String getIncome() {
         return income;
     }
@@ -194,7 +194,7 @@ public class UserForm implements Serializable {
     public void setIncome(String income) {
         this.income = income;
     }
-
+/*
     public String getOtherJob() {
         return otherJob;
     }
@@ -202,7 +202,7 @@ public class UserForm implements Serializable {
     public void setOtherJob(String otherJob) {
         this.otherJob = otherJob;
     }
-
+*/
     public String getTreated() {
         return treated;
     }
@@ -225,7 +225,7 @@ public class UserForm implements Serializable {
      *
      * @return その他の職業欄に入力がある場合にtrue
      */
-    @AssertTrue(message = "{tiscon4.order.inputUser.error.hasValueOtherJob}")
+   /* @AssertTrue(message = "{tiscon4.order.inputUser.error.hasValueOtherJob}")
     public boolean hasValueOtherJob() {
         if (StringUtil.isNullOrEmpty(job)) {
             // 職業が未入力の場合は、相関バリデーションは実施しない。(バリデーションOKとする)
@@ -235,7 +235,7 @@ public class UserForm implements Serializable {
         }
         return true;
     }
-
+*/
     /**
      * 既往歴が正しく入力されているかどうか判定する。
      * 治療有無で「はい」を選択し、既往歴に何らかの値が入力された場合、正しく入力されたと判定する。

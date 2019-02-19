@@ -34,14 +34,49 @@
                         <div class="ui horizontal divider">お勤め先について</div>
 
                         <div class="ui statement">
-                            ご職業が「経営・自営業」、「会社員」、「契約・派遣社員」、「公務員」、「民間団体」、「その他（有職）」の方は、以下の項目をご入力ください。
+                            ご職業が「経営・自営業」、「会社員」、「契約・派遣社員」、「公務員」、「民間団体」、「その他（有職）」の方は、★の項目をご入力ください。
                         </div>
 
                         <table class="ui celled table">
                             <tbody>
                             <tr>
                                 <td>
+                                    <label>ご職業</label>
+                                    <p style="color:red;">＊</p></td>
+                                <td>
+                                    <div th:each="item : ${jobTypes}" class="field"
+                                         th:classappend="${errors.hasError('job')} ? 'error'">
+                                        <input type="radio" name="job" th:value="${item.code}" th:text="${item.label}"
+                                               th:field="*{job}" th:checked="${form.job}==${item.code}"/>
+                                    </div>
+                                    <p th:if="${errors.hasError('job')}" th:text="${errors.getMessage('job')}"
+                                       class="error-message">
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>「その他 (有職）」を選んだ方は内容をご記入下さい（全角）</label>
+                                </td>
+                                <td>
+                                    <div class="field"
+                                         th:classappend="|${errors.hasError('otherJob')?'error': ''} ${errors.hasError('valueOtherJob')?'error': ''}|">
+                                        <input type="text" name="otherJob" th:value="${form.otherJob}"/>
+                                        <p th:if="${errors.hasError('otherJob')}"
+                                           th:text="${errors.getMessage('otherJob')}" class="error-message">
+                                        </p>
+                                        <p th:if="${errors.hasError('valueOtherJob')}"
+                                           th:text="${errors.getMessage('valueOtherJob')}" class="error-message">
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
                                     <label>お勤め先名（全角）</label>
+                                    <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
                                     <p>例：ＴＩＳＣＯＮ株式会社</p>
@@ -56,6 +91,7 @@
                             <tr>
                                 <td>
                                     <label>お勤め先郵便番号（半角）</label>
+                                    <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
                                     <p>例：123-4567</p>
@@ -70,6 +106,7 @@
                             <tr>
                                 <td style="white-space: nowrap;">
                                     <label>お勤め先住所（全角）</label>
+                                    <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
                                     <p>例：東京都新宿区西新宿８－１７－１</p>
@@ -84,6 +121,7 @@
                             <tr>
                                 <td>
                                     <label>お勤め先電話番号（半角）</label>
+                                    <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
                                     <p>例：00-1111-2222</p>
@@ -100,6 +138,7 @@
                             <tr>
                                 <td>
                                     <label>業種</label>
+                                    <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
                                     <div th:each="item : ${industryTypes}" class="field"

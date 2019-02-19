@@ -227,38 +227,6 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>ご職業</label>
-                                    <p style="color:red;">＊</p></td>
-                                <td>
-                                    <div th:each="item : ${jobTypes}" class="field"
-                                         th:classappend="${errors.hasError('job')} ? 'error'">
-                                        <input type="radio" name="job" th:value="${item.code}" th:text="${item.label}"
-                                               th:field="*{job}" th:checked="${form.job}==${item.code}"/>
-                                    </div>
-                                    <p th:if="${errors.hasError('job')}" th:text="${errors.getMessage('job')}"
-                                       class="error-message">
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label>「その他 (有職）」を選んだ方は内容をご記入下さい（全角）</label>
-                                </td>
-                                <td>
-                                    <div class="field"
-                                         th:classappend="|${errors.hasError('otherJob')?'error': ''} ${errors.hasError('valueOtherJob')?'error': ''}|">
-                                        <input type="text" name="otherJob" th:value="${form.otherJob}"/>
-                                        <p th:if="${errors.hasError('otherJob')}"
-                                           th:text="${errors.getMessage('otherJob')}" class="error-message">
-                                        </p>
-                                        <p th:if="${errors.hasError('valueOtherJob')}"
-                                           th:text="${errors.getMessage('valueOtherJob')}" class="error-message">
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
                                     <label>過去5年以内に、病気やケガで7日間以上にわたって医師の診察・検査・治療・投薬をうけたことがありますか</label>
                                     <p style="color:red;">＊</p>
                                 </td>

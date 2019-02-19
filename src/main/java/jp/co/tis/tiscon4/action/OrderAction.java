@@ -66,7 +66,7 @@ public class OrderAction {
         ctx.setRequestScopedVar("form", new UserForm());
         ctx.setRequestScopedVar("genderTypes", GenderType.values());
         ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
-        ctx.setRequestScopedVar("jobTypes", JobType.values());
+       // ctx.setRequestScopedVar("jobTypes", JobType.values());
         ctx.setRequestScopedVar("treatedTypes", TreatedType.values());
 
         return new HttpResponse("user.html");
@@ -97,6 +97,7 @@ public class OrderAction {
         BeanUtil.copy(form, insOrder);
 
         ctx.setRequestScopedVar("form", new JobForm());
+        ctx.setRequestScopedVar("jobTypes", JobType.values());
         ctx.setRequestScopedVar("industryTypes", IndustryType.values());
 
         return new HttpResponse("job.html");
