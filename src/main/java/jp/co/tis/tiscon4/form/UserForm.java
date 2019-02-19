@@ -15,18 +15,33 @@ public class UserForm implements Serializable {
 
     /** 漢字氏名 */
     @Required
-    @Domain("kanjiName")
-    private String kanjiName;
+    @Domain("kanjiName1")
+    private String kanjiName1;
+
+    /** 漢字氏名 */
+    @Required
+    @Domain("kanjiName2")
+    private String kanjiName2;
 
     /** カナ氏名 */
     @Required
-    @Domain("kanaName")
-    private String kanaName;
+    @Domain("kanaName1")
+    private String kanaName1;
+
+    /** カナ氏名 */
+    @Required
+    @Domain("kanaName2")
+    private String kanaName2;
 
     /** 英字氏名 */
     @Required
-    @Domain("alphabetName")
-    private String alphabetName;
+    @Domain("alphabetName1")
+    private String alphabetName1;
+
+    /** 英字氏名 */
+    @Required
+    @Domain("alphabetName2")
+    private String alphabetName2;
 
     /** 性別 */
     @Required
@@ -73,15 +88,15 @@ public class UserForm implements Serializable {
     @Domain("income")
     private String income;
 
-    /** 職業 */
-    @Required
+   /** 職業 */
+/*    @Required
     @Domain("job")
     private String job;
-
+*/
     /** その他の職業 */
-    @Domain("otherJob")
+  /*  @Domain("otherJob")
     private String otherJob;
-
+*/
     /** 治療歴有無 */
     @Required
     @Domain("treated")
@@ -91,28 +106,51 @@ public class UserForm implements Serializable {
     @Domain("medicalHistory")
     private String medicalHistory;
 
-    public String getKanjiName() {
-        return kanjiName;
+    public String getKanjiName1() {
+        return kanjiName1;
     }
 
-    public void setKanjiName(String kanjiName) {
-        this.kanjiName = kanjiName;
+    public void setKanjiName1(String kanjiName1) {
+        this.kanjiName1 = kanjiName1;
     }
 
-    public String getKanaName() {
-        return kanaName;
+    public String getKanjiName2() {
+        return kanjiName2;
     }
 
-    public void setKanaName(String kanaName) {
-        this.kanaName = kanaName;
+    public void setKanjiName2(String kanjiName2) {
+        this.kanjiName2 = kanjiName2;
     }
 
-    public String getAlphabetName() {
-        return alphabetName;
+    public String getKanaName1() {
+        return kanaName1;
     }
 
-    public void setAlphabetName(String alphabetName) {
-        this.alphabetName = alphabetName;
+    public void setKanaName1(String kanaName1) {
+        this.kanaName1 = kanaName1;
+    }
+
+    public String getKanaName2() {
+        return kanaName2;
+    }
+
+    public void setKanaName2(String kanaName2) {
+        this.kanaName2 = kanaName2;
+    }
+
+    public String getAlphabetName1() {
+        return alphabetName1;
+    }
+
+    public void setAlphabetName1(String alphabetName1) { this.alphabetName1 = alphabetName1;
+    }
+
+    public String getAlphabetName2() {
+        return alphabetName2;
+    }
+
+    public void setAlphabetName2(String alphabetName2) {
+        this.alphabetName2 = alphabetName2;
     }
 
     public String getDateOfBirth() {
@@ -178,7 +216,7 @@ public class UserForm implements Serializable {
     public void setMarried(String married) {
         this.married = married;
     }
-
+/*
     public String getJob() {
         return job;
     }
@@ -186,7 +224,7 @@ public class UserForm implements Serializable {
     public void setJob(String job) {
         this.job = job;
     }
-
+*/
     public String getIncome() {
         return income;
     }
@@ -194,7 +232,7 @@ public class UserForm implements Serializable {
     public void setIncome(String income) {
         this.income = income;
     }
-
+/*
     public String getOtherJob() {
         return otherJob;
     }
@@ -202,7 +240,7 @@ public class UserForm implements Serializable {
     public void setOtherJob(String otherJob) {
         this.otherJob = otherJob;
     }
-
+*/
     public String getTreated() {
         return treated;
     }
@@ -225,7 +263,7 @@ public class UserForm implements Serializable {
      *
      * @return その他の職業欄に入力がある場合にtrue
      */
-    @AssertTrue(message = "{tiscon4.order.inputUser.error.hasValueOtherJob}")
+   /* @AssertTrue(message = "{tiscon4.order.inputUser.error.hasValueOtherJob}")
     public boolean hasValueOtherJob() {
         if (StringUtil.isNullOrEmpty(job)) {
             // 職業が未入力の場合は、相関バリデーションは実施しない。(バリデーションOKとする)
@@ -235,7 +273,7 @@ public class UserForm implements Serializable {
         }
         return true;
     }
-
+*/
     /**
      * 既往歴が正しく入力されているかどうか判定する。
      * 治療有無で「はい」を選択し、既往歴に何らかの値が入力された場合、正しく入力されたと判定する。
