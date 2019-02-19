@@ -27,17 +27,32 @@ public class Tiscon4DomainBean {
     /** 漢字氏名 */
     @SystemChar(charsetDef = "全角文字", message = "{domain.illegalCharacter}")
     @Length(max = 60)
-    private String kanjiName;
+    private String kanjiName1;
+
+    /** 漢字氏名 */
+    @SystemChar(charsetDef = "全角文字", message = "{domain.illegalCharacter}")
+    @Length(max = 60)
+    private String kanjiName2;
 
     /** カナ氏名 */
-    @SystemChar(charsetDef = "全角カタカナスペース", message = "{domain.illegalCharacter}")
+    @SystemChar(charsetDef = "全角カタカナ", message = "{domain.illegalCharacter}")
     @Length(max = 90)
-    private String kanaName;
+    private String kanaName1;
+
+    /** カナ氏名 */
+    @SystemChar(charsetDef = "全角カタカナ", message = "{domain.illegalCharacter}")
+    @Length(max = 90)
+    private String kanaName2;
 
     /** 英字氏名 */
-    @SystemChar(charsetDef = "半角英字スペース", message = "{domain.illegalCharacter}")
+    @SystemChar(charsetDef = "半角英字", message = "{domain.illegalCharacter}")
     @Length(max = 120)
-    private String alphabetName;
+    private String alphabetName1;
+
+    /** 英字氏名 */
+    @SystemChar(charsetDef = "半角英字", message = "{domain.illegalCharacter}")
+    @Length(max = 120)
+    private String alphabetName2;
 
     /** 性別 */
     @CodeValue(enumClass = GenderType.class)
