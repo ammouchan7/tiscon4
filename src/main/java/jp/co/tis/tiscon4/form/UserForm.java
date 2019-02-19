@@ -15,18 +15,33 @@ public class UserForm implements Serializable {
 
     /** 漢字氏名 */
     @Required
-    @Domain("kanjiName")
-    private String kanjiName;
+    @Domain("kanjiName1")
+    private String kanjiName1;
+
+    /** 漢字氏名 */
+    @Required
+    @Domain("kanjiName2")
+    private String kanjiName2;
 
     /** カナ氏名 */
     @Required
-    @Domain("kanaName")
-    private String kanaName;
+    @Domain("kanaName1")
+    private String kanaName1;
+
+    /** カナ氏名 */
+    @Required
+    @Domain("kanaName2")
+    private String kanaName2;
 
     /** 英字氏名 */
     @Required
-    @Domain("alphabetName")
-    private String alphabetName;
+    @Domain("alphabetName1")
+    private String alphabetName1;
+
+    /** 英字氏名 */
+    @Required
+    @Domain("alphabetName2")
+    private String alphabetName2;
 
     /** 性別 */
     @Required
@@ -91,28 +106,51 @@ public class UserForm implements Serializable {
     @Domain("medicalHistory")
     private String medicalHistory;
 
-    public String getKanjiName() {
-        return kanjiName;
+    public String getKanjiName1() {
+        return kanjiName1;
     }
 
-    public void setKanjiName(String kanjiName) {
-        this.kanjiName = kanjiName;
+    public void setKanjiName1(String kanjiName1) {
+        this.kanjiName1 = kanjiName1;
     }
 
-    public String getKanaName() {
-        return kanaName;
+    public String getKanjiName2() {
+        return kanjiName2;
     }
 
-    public void setKanaName(String kanaName) {
-        this.kanaName = kanaName;
+    public void setKanjiName2(String kanjiName2) {
+        this.kanjiName2 = kanjiName2;
     }
 
-    public String getAlphabetName() {
-        return alphabetName;
+    public String getKanaName1() {
+        return kanaName1;
     }
 
-    public void setAlphabetName(String alphabetName) {
-        this.alphabetName = alphabetName;
+    public void setKanaName1(String kanaName1) {
+        this.kanaName1 = kanaName1;
+    }
+
+    public String getKanaName2() {
+        return kanaName2;
+    }
+
+    public void setKanaName2(String kanaName2) {
+        this.kanaName2 = kanaName2;
+    }
+
+    public String getAlphabetName1() {
+        return alphabetName1;
+    }
+
+    public void setAlphabetName1(String alphabetName1) { this.alphabetName1 = alphabetName1;
+    }
+
+    public String getAlphabetName2() {
+        return alphabetName2;
+    }
+
+    public void setAlphabetName2(String alphabetName2) {
+        this.alphabetName2 = alphabetName2;
     }
 
     public String getDateOfBirth() {
