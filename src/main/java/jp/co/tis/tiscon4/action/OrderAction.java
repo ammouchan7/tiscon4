@@ -153,6 +153,20 @@ public class OrderAction {
         return new HttpResponse("job.html");
     }
 
+    /**　-----------編集-----------------------------------------------------------
+     * 確認画面を表示する
+     */
+
+    public HttpResponse confirmed(HttpRequest req, ExecutionContext ctx) {
+        ctx.setRequestScopedVar("genderTypes", GenderType.values());
+        ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
+        ctx.setRequestScopedVar("jobTypes", JobType.values());
+        ctx.setRequestScopedVar("treatedTypes", TreatedType.values());
+
+        return new HttpResponse("confirmed.html");
+    }
+
+
     /**
      * 完了ページを表示する。
      *
