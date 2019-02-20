@@ -94,7 +94,7 @@
                                     <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
-                                    <p>例：123-4567</p>
+                                    <p>例：1234567（ハイフンなし）</p>
                                     <div class="field" th:classappend="${errors.hasError('employerZipCode')} ? 'error'">
                                         <input type="text" name="employerZipCode" th:value="${form.employerZipCode}"/>
                                         <p th:if="${errors.hasError('employerZipCode')}"
@@ -124,7 +124,7 @@
                                     <p style="color:red;">★</p></td>
                                 </td>
                                 <td>
-                                    <p>例：00-1111-2222</p>
+                                    <p>例：0011112222（ハイフンなし）</p>
                                     <div class="field"
                                          th:classappend="${errors.hasError('employerPhoneNumber')} ? 'error'">
                                         <input type="text" name="employerPhoneNumber"

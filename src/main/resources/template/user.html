@@ -124,11 +124,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>生年月日（半角　ハイフンなし）</label>
+                                    <label>生年月日（半角）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：19900101</p>
+                                    <p>例：19900101（ハイフンなし）</p>
                                     <div class="field" th:classappend="${errors.hasError('dateOfBirth')} ? 'error'">
                                         <input type="text" name="dateOfBirth" th:value="${form.dateOfBirth}"/>
                                         <p th:if="${errors.hasError('dateOfBirth')}"
@@ -139,11 +139,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>郵便番号（半角　ハイフンなし）</label>
+                                    <label>郵便番号（半角）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：1234567</p>
+                                    <p>例：1234567（ハイフンなし）</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
                                         <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
                                         <p th:if="${errors.hasError('zipCode')}"
@@ -169,11 +169,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>自宅電話番号（半角　ハイフンなし）</label>
+                                    <label>自宅電話番号（半角）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：0011112222</p>
+                                    <p>例：0011112222（ハイフンなし）</p>
                                     <div class="field" th:classappend="${errors.hasError('homePhoneNumber')} ? 'error'">
                                         <input type="text" name="homePhoneNumber" th:value="${form.homePhoneNumber}"/>
                                         <p th:if="${errors.hasError('homePhoneNumber')}"
@@ -184,11 +184,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <label>携帯電話番号（半角　ハイフンなし）</label>
+                                    <label>携帯電話番号（半角）</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <p>例：08000000000</p>
+                                    <p>例：08000000000（ハイフンなし）</p>
                                     <div class="field"
                                          th:classappend="${errors.hasError('mobilePhoneNumber')} ? 'error'">
                                         <input type="text" name="mobilePhoneNumber"
