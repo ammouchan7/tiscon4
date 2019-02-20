@@ -11,6 +11,7 @@ import jp.co.tis.tiscon4.form.AcceptForm;
 import jp.co.tis.tiscon4.form.IndexForm;
 import jp.co.tis.tiscon4.form.JobForm;
 import jp.co.tis.tiscon4.form.UserForm;
+import nablarch.common.dao.EntityList;
 import nablarch.common.dao.UniversalDao;
 import nablarch.common.web.interceptor.InjectForm;
 import nablarch.common.web.session.SessionUtil;
@@ -94,7 +95,7 @@ public class OrderAction {
             throw new ApplicationException(message);
         }
 
-        UniversalDao.findAllBySqlFile(ZipcodeDto.class, "ZIPCODE_LIST");
+
 
         BeanUtil.copy(form, insOrder);
 
