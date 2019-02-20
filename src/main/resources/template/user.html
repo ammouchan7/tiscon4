@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
 <head>
     <title>ご本人情報の入力</title>
 
@@ -10,7 +12,7 @@
 </head>
 <body>
 
-<nav th:insert="header.html :: header"></nav>
+<nav th:insert="header3.html :: header"></nav>
 
 <div class="full height image">
     <div class="ui main container">
@@ -163,7 +165,7 @@
                                 <td>
                                     <p>例：1234567</p>
                                     <div class="field" th:classappend="${errors.hasError('zipCode')} ? 'error'">
-                                        <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}"/>
+                                        <input type="text" class="zipcode" name="zipCode" th:value="${form.zipCode}" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"/>
                                         <p th:if="${errors.hasError('zipCode')}"
                                            th:text="${errors.getMessage('zipCode')}" class="error-message">
                                         </p>

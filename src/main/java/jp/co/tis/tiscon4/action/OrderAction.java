@@ -25,6 +25,8 @@ import nablarch.fw.web.HttpRequest;
 import nablarch.fw.web.HttpResponse;
 import nablarch.fw.web.interceptor.OnError;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 保険申し込みに関するActionクラス.
  *
@@ -157,8 +159,21 @@ public class OrderAction {
     /**　-----------編集-----------------------------------------------------------
      * 確認画面を表示する
      */
-
+    @InjectForm(form = JobForm.class)
+    @OnError(type = ApplicationException.class, path = "forward://inputJobForError")
+    @UseToken
     public HttpResponse confirmed(HttpRequest req, ExecutionContext ctx) {
+        JobForm form = ctx.getRequestScopedVar("form");
+        InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
+
+        BeanUtil.copy(form, insOrder);
+
+    //    UniversalDao.insert(insOrder);
+
+     /*   UserForm form1 = new UserForm();
+        BeanUtil.copy(insOrder, form1);
+*/
+        ctx.setRequestScopedVar("form", form);
         ctx.setRequestScopedVar("genderTypes", GenderType.values());
         ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
         ctx.setRequestScopedVar("jobTypes", JobType.values());
